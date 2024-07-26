@@ -1,0 +1,76 @@
+#---------------------------------------------
+# Endpoints Item de leilão
+### Busca todos os itens de leilão
+
+GET /itemdeleilao HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Busca por um item de leilão específico
+
+GET /itemdeleilao/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Cria um item de leilão
+POST /itemdeleilao HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "nome": "Sofaafff",
+  "valorMinimo": 100,
+  "leilaoAberto": true
+}
+
+### Atualiza um item de leilão
+PUT /itemdeleilao/3 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "nome": "Aviao",
+  "valorMinimo": 100,
+  "leilaoAberto": true
+}
+
+### Registra um lance
+POST /itemdeleilao/ HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "valor": 400,
+  "participante": {
+    "id": 1
+  }
+}
+
+### Finaliza os lances
+PATCH  /itemdeleilao/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "leilaoAberto": false
+}
+#---------------------------------------------
+### Endpoints Participante
+POST /participante HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "nome": "Fernanda",
+  "cpf": "142.192.156-11"
+}
+
+### Busca todos os participantes
+GET /participante HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Busca por 1 participante
+GET /participante/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json

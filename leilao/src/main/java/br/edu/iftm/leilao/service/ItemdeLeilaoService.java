@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import br.edu.iftm.leilao.model.ItemDeLeilao;
 import br.edu.iftm.leilao.model.Lance;
 import br.edu.iftm.leilao.repository.ItemDeLeilaoRepository;
+import br.edu.iftm.leilao.service.exceptions.LeilaoException;
 
 @Service
 public class ItemdeLeilaoService {
@@ -54,7 +55,7 @@ public class ItemdeLeilaoService {
 		public Lance finaliza(long id) { // retorna o lance vencedor e fecha o leilao
 			Optional<ItemDeLeilao> optionalItem = itemDeLeilaoRepository.findById(id);
 			if (!optionalItem.isPresent()) {
-				throw new RuntimeException("Item de leilão não encontrado");
+				throw new LeilaoException("Item de leilão não encontrado");
 			}
 	
 			ItemDeLeilao item = optionalItem.get();
@@ -74,7 +75,7 @@ public class ItemdeLeilaoService {
 				itemDeLeilaoRepository.save(item);
 				return lanceVencedor;
 			} else {
-				throw new RuntimeException("Leilão já finalizado");
+				throw new LeilaoException("Leilão já finalizado");
 			}
 		}
 	

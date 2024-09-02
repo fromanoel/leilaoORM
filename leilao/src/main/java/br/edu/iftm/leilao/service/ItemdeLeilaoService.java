@@ -75,7 +75,7 @@ public class ItemdeLeilaoService {
 				itemDeLeilaoRepository.save(item);
 				return lanceVencedor;
 			} else {
-				throw new LeilaoException("Leilão já finalizado");
+				throw new LeilaoException("Leilão já finalizado.");
 			}
 		}
 	

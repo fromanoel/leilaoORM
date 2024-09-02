@@ -15,14 +15,18 @@ import br.edu.iftm.leilao.repository.ParticipanteRepository;
 @SpringBootApplication
 public class LeilaoApplication implements CommandLineRunner {
 
-	@Autowired
-	private ParticipanteRepository participante;
+	
+	private final ParticipanteRepository participante;
 
-	@Autowired
-	private ItemDeLeilaoRepository itemDeLeilaoRepository;
+	private final ItemDeLeilaoRepository itemDeLeilaoRepository;
 
-	@Autowired
-	private LanceRepository lanceRepository;
+	private final LanceRepository lanceRepository;
+
+	public LeilaoApplication(ParticipanteRepository participante, ItemDeLeilaoRepository itemDeLeilaoRepository, LanceRepository lanceRepository){
+		this.participante = participante;
+		this.itemDeLeilaoRepository = itemDeLeilaoRepository;
+		this.lanceRepository = lanceRepository;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeilaoApplication.class, args);

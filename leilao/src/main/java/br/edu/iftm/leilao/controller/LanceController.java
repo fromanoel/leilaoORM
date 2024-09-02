@@ -17,8 +17,13 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 @RestController
 @RequestMapping("/lance")
 public class LanceController {
+
+	private final LanceService lanceService;
 	@Autowired
-	private LanceService lanceService;
+	public LanceController(LanceService lanceService){
+		this.lanceService = lanceService;
+	}
+
 
 	@DeleteMapping({"/{id}"})
 	public void delete(@PathVariable Long id){

@@ -20,8 +20,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 @RequestMapping("/participante")
 public class ParticipanteController {
+
+	private final ParticipanteService participanteService;
+
 	@Autowired
-	private ParticipanteService participanteService;
+	public ParticipanteController(ParticipanteService participanteService){
+		this.participanteService = participanteService;
+	}
 
 	@PostMapping
 	public Participante create(@RequestBody Participante participante) {

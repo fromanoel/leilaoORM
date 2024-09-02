@@ -17,8 +17,12 @@ import br.edu.iftm.leilao.repository.ItemDeLeilaoRepository;
 public class ItemdeLeilaoService {
 //
 
+	private final ItemDeLeilaoRepository itemDeLeilaoRepository;
+
 	@Autowired
-	private ItemDeLeilaoRepository itemDeLeilaoRepository;
+	public ItemdeLeilaoService(ItemDeLeilaoRepository itemDeLeilaoRepository){
+		this.itemDeLeilaoRepository = itemDeLeilaoRepository;
+	}
 
 	@Autowired
 	private ParticipanteService participanteService;

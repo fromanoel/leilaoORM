@@ -15,8 +15,12 @@ import br.edu.iftm.leilao.repository.LanceRepository;
 public class LanceService {
 
 
-	@Autowired
-	private LanceRepository lanceRepository;
+	private final LanceRepository lanceRepository;
+
+    @Autowired
+    public LanceService(LanceRepository lanceRepository) {
+        this.lanceRepository = lanceRepository;
+    }
 
 	@Autowired
 	private ParticipanteService participanteService;

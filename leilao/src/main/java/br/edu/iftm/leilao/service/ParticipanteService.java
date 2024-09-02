@@ -11,8 +11,14 @@ import br.edu.iftm.leilao.repository.ParticipanteRepository;
 @Service
 public class ParticipanteService {
 
+	
+	private final ParticipanteRepository participanteRepository;
+
+
 	@Autowired
-	private ParticipanteRepository participanteRepository;
+	public ParticipanteService(ParticipanteRepository participanteRepository){
+		this.participanteRepository = participanteRepository;
+	}
 
 	public Participante novo(Participante participante) {
 		return participanteRepository.save(participante);

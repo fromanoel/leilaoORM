@@ -22,8 +22,13 @@ import br.edu.iftm.leilao.service.ItemdeLeilaoService;
 @RequestMapping("/itemdeleilao")
 public class ItemLeilaoController {
 
+	private final ItemdeLeilaoService itemdeLeilaoService;
+
 	@Autowired
-	private ItemdeLeilaoService itemdeLeilaoService;
+	public ItemLeilaoController(ItemdeLeilaoService itemdeLeilaoService){
+		this.itemdeLeilaoService = itemdeLeilaoService;
+	}
+
 
 	@DeleteMapping({"/{id}"})
 	public void delete (@PathVariable Long id) {

@@ -47,7 +47,7 @@ public class ItemdeLeilaoService {
 
 	public List<ItemDeLeilao> buscarTodos() {
 		List<ItemDeLeilao> itens = new ArrayList<>();
-		itemDeLeilaoRepository.findAll().forEach(item -> itens.add(item));
+		itemDeLeilaoRepository.findAll().forEach(itens::add);
 		return itens;
 	}
 	

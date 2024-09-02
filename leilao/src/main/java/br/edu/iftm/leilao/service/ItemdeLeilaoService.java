@@ -6,7 +6,6 @@ import java.util.Optional;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import br.edu.iftm.leilao.model.ItemDeLeilao;
@@ -23,12 +22,6 @@ public class ItemdeLeilaoService {
 	public ItemdeLeilaoService(ItemDeLeilaoRepository itemDeLeilaoRepository){
 		this.itemDeLeilaoRepository = itemDeLeilaoRepository;
 	}
-
-	@Autowired
-	private ParticipanteService participanteService;
-
-	@Autowired
-	private LanceService lanceService;
 //{DELETE [/itemdeleilao/{id}]}: delete(Long)
 // {GET [/itemdeleilao/{id}]}: item(Long)
 // {PUT [/itemdeleilao/{id}]}: atualiza(Long,ItemDeLeilao)

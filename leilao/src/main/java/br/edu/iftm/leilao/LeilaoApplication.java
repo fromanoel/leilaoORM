@@ -22,6 +22,7 @@ public class LeilaoApplication implements CommandLineRunner {
 
 	private final LanceRepository lanceRepository;
 
+	@Autowired
 	public LeilaoApplication(ParticipanteRepository participante, ItemDeLeilaoRepository itemDeLeilaoRepository, LanceRepository lanceRepository){
 		this.participante = participante;
 		this.itemDeLeilaoRepository = itemDeLeilaoRepository;

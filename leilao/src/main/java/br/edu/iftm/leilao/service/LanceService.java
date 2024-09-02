@@ -1,14 +1,11 @@
 package br.edu.iftm.leilao.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.iftm.leilao.model.ItemDeLeilao;
 import br.edu.iftm.leilao.model.Lance;
-import br.edu.iftm.leilao.model.Participante;
 import br.edu.iftm.leilao.repository.LanceRepository;
 
 @Service
@@ -21,9 +18,6 @@ public class LanceService {
     public LanceService(LanceRepository lanceRepository) {
         this.lanceRepository = lanceRepository;
     }
-
-	@Autowired
-	private ParticipanteService participanteService;
 
 	public Lance atualiza(Lance lance, Long id) {
 		lance.setId(id);

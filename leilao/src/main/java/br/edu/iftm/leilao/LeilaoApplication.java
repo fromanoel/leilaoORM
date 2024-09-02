@@ -1,5 +1,7 @@
 package br.edu.iftm.leilao;
 
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +16,8 @@ import br.edu.iftm.leilao.repository.ParticipanteRepository;
 
 @SpringBootApplication
 public class LeilaoApplication implements CommandLineRunner {
+
+	Logger logger = Logger.getLogger(getClass().getName());
 
 	
 	private final ParticipanteRepository participante;
@@ -46,8 +50,8 @@ public class LeilaoApplication implements CommandLineRunner {
 
 		itemDeLeilaoRepository.findAll().forEach(item -> {
 			for (Lance l : item.getLancesRecebidos()) {
-				System.out.println("Item: " + item.getNome() + " - Lance: " + l.getValor() + " - Participante: "
-						+ l.getParticipante().getNome());
+				logger.info("Item: " + item.getNome() + " - Lance: " + l.getValor() + " - Participante: "
+				+ l.getParticipante().getNome());
 
 			}
 		});
